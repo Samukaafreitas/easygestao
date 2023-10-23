@@ -1,0 +1,129 @@
+/* ------------------------------ MAIN CSS ---------------------------*/
+
+* {
+    font-family: 'Roboto';
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header {
+    border-bottom: 1px solid #CCC;
+}
+
+/* ------------------------------ NAVBAR CSS ---------------------------*/
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#icon-container img {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+ul.search-field {
+    display: flex;
+}
+
+
+
+/* ------------------------------ PLANS PAGE CSS ---------------------------*/
+
+#plans-container .title-container h1 {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#myplan-container td {
+    display: inline-block;
+}
+
+#myplans-container .delete-btn, .edit-btn {
+    font-size: 10px;
+}
+
+#table-head th {
+    width: 25%;
+}
+
+.total-row {
+    border-top: 1px solid #CCC; 
+}
+
+.btn-container {
+     margin-top: 20px;
+     margin-left: 20px;
+}
+
+.btn-success {
+    font-size: 15px;
+    float: right;
+}
+
+.noplans-create {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+/* ------------------------------ PLANS CREATE PAGE CSS ---------------------------*/
+
+.plans-create-container {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.plans-create-container form {
+    width: 50%;
+    margin: auto;
+}
+
+.plans-create-container h1 {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.form-group .btn-primary {
+    margin-top: 25px;
+}
+
+
+
+/* ------------------------------ FOOTER CSS ---------------------------*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #CCC;
+}
+
+footer .easygestao {
+    color: black;
+    list-style: none;
+}
+
+footer .easygestao .easy {
+    font-size: 20px;
+}
+
+footer .easygestao .slogan {
+    font-size: 12px;
+}
