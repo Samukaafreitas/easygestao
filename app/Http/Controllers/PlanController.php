@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Plan;
-use App\Models\User_plan;
+use App\Models\PlanUser;
 use App\Models\User;
 
 class PlanController extends Controller
@@ -12,8 +12,9 @@ class PlanController extends Controller
     public function index() {
 
         $plans = Plan::all();
+        $planusers = PlanUser::all();
 
-        return view('welcome', ['plans' => $plans]);
+        return view('welcome', ['plans' => $plans, 1, 'planusers' => $planusers]);
     }
 
     public function plans() {
