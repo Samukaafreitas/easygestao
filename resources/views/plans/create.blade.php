@@ -2,6 +2,16 @@
 @section('title', 'EasyGestão')
 @section('content')
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="plans-create-container">
         <h1 class="create-info">Cadastrar plano:</h1>
         <form action="/plans/" method="post" enctype="multipart/form-data">

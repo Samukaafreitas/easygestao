@@ -31,6 +31,24 @@ class PlanController extends Controller
 
     public function storePlan(Request $request) {
 
+        $validated = $request->validate(
+            [
+                'plan_name' => 'required|unique:plans|max:100',
+                'plan_value' => 'required',
+                'plan_date' => 'required',
+                'plan_additional_lines' => 'required',
+                'plan_operator' => 'required'
+            ],[
+                'plan_name.required'=>'O Nome do plano é obrigatório.',
+                'plan_name.unique'=>'O Nome do plano que deseja adicionar já está em uso, identifique-o de outra forma.',
+                'plan_name.max'=>'O Nome do plano é muito longo.',
+                'plan_value.required'=>'O valor do plano é obrigatório.',
+                'plan_date.required'=>'A data de vencimento é obrigatória.',
+                'plan_additional_lines.required'=>'A quantidade de linhas adicionais é obrigatório.',
+                'plan_operator'=>'A seleção da Operadora é obrigatória.'
+            ]
+            );
+
         $plan = new Plan;
 
         $plan->plan_name = $request->plan_name;

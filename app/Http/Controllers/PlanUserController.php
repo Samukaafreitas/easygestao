@@ -11,6 +11,27 @@ class PlanUserController extends Controller
 {
     public function storePlan_user(Request $request) {
 
+        $validated = $request->validate(
+            [
+                'plan_user_name'=>'required|unique:plan_users|max:100',
+                'plan_user_value'=>'required',
+                'plan_user_date'=>'required',
+                'plan_user_number'=>'required|regex:/\d{2}[0-9]{9}/|min:11|unique:plan_users',
+                'plan_user_operator'=>'required'
+            ],[
+                'plan_user_name.required'=>'O nome do usuário é obrigatório.',
+                'plan_user_name.unique'=>'O nome de usuário já está em uso, utilize outro.',
+                'plan_user_name.max'=>'O nome é muito longo.',
+                'plan_user_value.required'=>'O valor da mensalidade é obrigatório.',
+                'plan_user_date.required'=>'A data de vencimento é obrigatória.',
+                'plan_user_number.required'=>'O numero de telefone é obrigatório.',
+                'plan_user_number.regex'=>'O numero inserido não possui valor válido, utilize o padrão a seguir: DDD+Numero com um total de 11 dígitos.',
+                'plan_user_number.min'=>'O numero precisa ter 11 dígitos.',
+                'plan_user_number.unique'=>'O numero já está em uso.',
+                'plan_user_operator'=>'Selecione uma operadora.'
+            ]
+        );
+
         $Plan_user = new PlanUser;
         
         
