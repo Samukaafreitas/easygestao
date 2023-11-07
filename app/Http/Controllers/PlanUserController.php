@@ -56,6 +56,25 @@ class PlanUserController extends Controller
 
     }
 
+    public function destroy($id) {
+        PlanUser::findOrFail($id)->delete();
+
+        return redirect('/users/list')->with('msg', 'Usuário excluido com sucesso!');
+    }
+
+    public function edit($id) {
+        $planUser = PlanUser::findOrFail($id);
+
+        return view('users.edit', ['planUser' => $planUser]);
+    }
+
+    public function update(Request $request) {
+        $data = $request->all();
+        PlanUser::findOrFail($request->id)->update($data);
+
+        return redirect('/users/list')->with('msg', 'Usuário editado com Sucesso');
+    }
+
     public function plan_User_Create() {
         $plans = Plan::all();
         return view('users.create', ['plans' => $plans]);

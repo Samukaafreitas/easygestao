@@ -19,7 +19,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Valor</th>
-                    <th scope="col">Plano</th>
+                    <th scope="col">Numero</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -31,9 +31,9 @@
                         <td class="plan_user_value">R$ {{ $plan_user->plan_user_value }},00</td>
                         <td class="plan_user_value">{{ $plan_user->plan_user_number }}</td>
                         <td class="actions">
-                            <a href="/plans/edit/{{ $plan_user->id }}"class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a></td>
+                            <a href="/users/edit/{{ $plan_user->id }}"class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a></td>
                         <td>
-                        <form action="/user/{{ $plan_user->id }}" method="POST">
+                        <form action="/users/{{ $plan_user->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>

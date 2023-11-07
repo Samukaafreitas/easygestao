@@ -20,10 +20,17 @@ Route::get('/', [PlanController::class, 'index']);
 Route::get('/plans/list', [PlanController::class, 'plans']);
 Route::get('/plans/create', [PlanController::class, 'create']);
 Route::post('/plans', [PlanController::class, 'storePlan']);
+
 Route::get('/users/list', [PlanUserController::class, 'plan_users']);
 Route::get('/users/create', [PlanUserController::class, 'plan_User_Create']);
 Route::post('/users', [PlanUserController::class, 'storePlan_user']);
 
+// Rota de Delete de Users
+Route::delete('/users/{id}', [PlanUserController::class, 'destroy']);
+
+// Rotas de Edit de Users
+Route::get('/users/edit/{id}', [PlanUserController::class, 'edit']);
+Route::put('/users/update/{id}', [PlanUserController::class, 'update']);
 
 
 Route::middleware([

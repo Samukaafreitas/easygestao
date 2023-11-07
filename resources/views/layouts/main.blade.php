@@ -51,6 +51,11 @@
             </div>
         </nav>
     </header>
+        @if(session('msg'))
+        <div class="alert alert-success">
+            <p class="msg">{{ session('msg') }}</p>
+        </div>
+        @endif
     @yield('content')
 </body>
     <footer class="bg-light text-light text-center py-3">
