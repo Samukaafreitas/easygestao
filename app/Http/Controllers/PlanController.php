@@ -67,4 +67,22 @@ class PlanController extends Controller
         
 
     }
+
+    public function destroy($id) {
+        Plan::findOrFail($id)->delete();
+        return redirect('/plans/list')->with('msg', 'Plano excluido com sucesso!');
+    }
+
+    public function edit($id) {
+        $plan = Plan::findOrFail($id);
+
+        return view('plans.edit', ['plan' => $plan]);
+    }
+
+    public function update(Request $request) {
+        $data = $request->all();
+        Plan::findOrFail($request->id)->update($data);
+
+        return redirect('/plans/list')->with('msg', 'Plano editado com Sucesso');
+    }
 }

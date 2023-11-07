@@ -21,6 +21,14 @@ Route::get('/plans/list', [PlanController::class, 'plans']);
 Route::get('/plans/create', [PlanController::class, 'create']);
 Route::post('/plans', [PlanController::class, 'storePlan']);
 
+// Rota de Delete de Plans
+Route::delete('/plans/{id}', [PlanController::class, 'destroy']);
+
+// Rotas de Edit de Plans
+Route::get('/plans/edit/{id}', [PlanController::class, 'edit']);
+Route::put('/plans/update/{id}', [PlanController::class, 'update']);
+
+
 Route::get('/users/list', [PlanUserController::class, 'plan_users']);
 Route::get('/users/create', [PlanUserController::class, 'plan_User_Create']);
 Route::post('/users', [PlanUserController::class, 'storePlan_user']);

@@ -33,7 +33,7 @@
                         <td class="actions">
                             <a href="/plans/edit/{{ $plan->id }}"class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a></td>
                         <td>
-                        <form action="/plan/{{ $plan->id }}" method="POST">
+                        <form action="/plans/{{ $plan->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Deletar</button>
