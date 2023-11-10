@@ -64,8 +64,9 @@ class PlanUserController extends Controller
 
     public function edit($id) {
         $planUser = PlanUser::findOrFail($id);
+        $plans = Plan::all();
 
-        return view('users.edit', ['planUser' => $planUser]);
+        return view('users.edit', ['planUser' => $planUser, 'plans' => $plans]);
     }
 
     public function update(Request $request) {

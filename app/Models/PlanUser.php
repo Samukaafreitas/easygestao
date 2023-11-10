@@ -16,4 +16,6 @@ class PlanUser extends Model
     protected $casts = [
         'plan_user_operator' => 'array'
     ];
+
+    protected $guarded = [];
 }
