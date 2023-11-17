@@ -21,4 +21,12 @@ class Plan extends Model
         return $this->hasMany('\App\Models\Plan_User');
     }
 
+    protected $appends = [
+        'display'
+    ];
+
+    public function getDisplayAttribute(){
+        return $this->plan_name;
+    }
+
 }

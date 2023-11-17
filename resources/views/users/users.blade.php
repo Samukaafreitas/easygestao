@@ -5,29 +5,32 @@
 
 
 
-    @if(count($plan_users) > 0)
-    <div class="btn-container">
-        <a href="/users/create"class="btn btn-success edit-btn"><ion-icon name="create-outline"></ion-icon>Adicionar Usuário</a></td>
-    </div>
-    <div id="plans-container">
+@if(count($plan_users) > 0)
+<div id="users-container">
+        <div class="btn-users-container">
+        <a href="/users/create"class="btn btn-success edit-btn"><ion-icon name="create-outline"></ion-icon>Adicionar Usuário</a>
+        </div>
         <div class="title-container">
-            <h1>Aqui estão seus planos cadastrados:</h1>
-        </div>    
+            <h1>Aqui estão os usuários cadastrados:</h1>
+        </div>
+        <div class="users-list">    
         <table>
-            <thead id="table-head">
+            <thead id="table-head-users">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Plano</th>
                     <th scope="col">Valor</th>
                     <th scope="col">Numero</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
-            <tbody id="myplans-container">
+            <tbody id="myusers-container">
                 @foreach($plan_users as $plan_user)
                     <tr>
                         <td class="hash">{{ $loop->index + 1 }}</td>
-                        <td class="plan_user_name"><a href="/plan/{{ $plan_user->id }}">{{ $plan_user->plan_user_name }}</a></td>
+                        <td class="plan_user_name"><a href="/users/{{ $plan_user->id }}">{{ $plan_user->plan_user_name }}</a></td>
+                        <td class="plan_id">{{ $plan_user->plan->plan_name }}</td>
                         <td class="plan_user_value">R$ {{ $plan_user->plan_user_value }},00</td>
                         <td class="plan_user_value">{{ $plan_user->plan_user_number }}</td>
                         <td class="actions">
@@ -48,9 +51,9 @@
                 </tr>
             </tbody>
         </table>
-        
+        </div>
     @else
-        <h2 class="noplans-create">Você não tem usuários cadastrados... <a href="/users/create">Clique aqui</a> para cadastrar.</h2>
+        <h2 class="nousers-create">Você não tem usuários cadastrados... <a href="/users/create">Clique aqui</a> para cadastrar.</h2>
     @endif
 </div>
 

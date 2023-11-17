@@ -6,10 +6,10 @@
 
 
     @if(count($plans) > 0)
-    <div class="btn-container">
-        <a href="/plans/create"class="btn btn-success edit-btn"><ion-icon name="create-outline"></ion-icon>Adicionar Plano</a></td>
-    </div>
     <div id="plans-container">
+        <div class="btn-container">
+            <a href="/plans/create"class="btn btn-success edit-btn"><ion-icon name="create-outline"></ion-icon>Adicionar Plano</a></td>
+        </div>
         <div class="title-container">
             <h1>Aqui estão seus planos cadastrados:</h1>
         </div>    

@@ -48,6 +48,54 @@ ul.search-field {
 }
 
 
+/* ------------------------------ USERS PAGE CSS ---------------------------*/
+
+.nousers-create {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#users-container .title-container h1 {
+    font-size: 20px;
+    margin: 20px;
+}
+
+#myusers-container .delete-btn, .edit-btn {
+    font-size: 10px;
+}
+
+#myusers-container {
+    text-align: center;
+}
+
+#table-head-users th {
+    width: 20%;
+}
+
+#table-head-users {
+    text-align: center;
+}
+
+#users-container {
+    max-width: 80%;
+}
+
+.btn-users-container {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#users-container {
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+#table-head-users,
+#myusers-container {
+    text-align: center;
+}
+
 /* ------------------------------ PLANS PAGE CSS ---------------------------*/
 
 #plans-container .title-container h1 {
@@ -68,7 +116,7 @@ ul.search-field {
 }
 
 .total-row {
-    border-top: 1px solid #CCC; 
+    border-top: 1px solid #CCC;
 }
 
 .btn-container {
@@ -87,6 +135,15 @@ ul.search-field {
     margin-left: 20px;
 }
 
+#plans-container {
+    max-width: 900px;
+    margin: 0 auto; 
+}
+
+#table-head-users,
+#myusers-container {
+    text-align: center;
+}
 
 /* ------------------------------ PLANS CREATE PAGE CSS ---------------------------*/
 
@@ -96,7 +153,7 @@ ul.search-field {
 }
 
 .plans-create-container form {
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 
