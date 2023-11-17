@@ -40,6 +40,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/users/list">Usuários</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/payments/list">Pagamentos</a>
+                </li>
                 </ul>
                 <ul class="navbar-nav ms-auto search-field">
                 <li class="nav-item">
