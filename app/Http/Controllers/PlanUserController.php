@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Plan;
 use App\Models\PlanUser;
+use App\Models\MonthlyPayment;
 use App\Models\User;
 
 class PlanUserController extends Controller
