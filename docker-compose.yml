@@ -6,6 +6,7 @@ networks:
 
 volumes:
   easygestao_database_data:
+  # easygestao_nginx_data:
 
 services:
   easygestao:
@@ -20,16 +21,38 @@ services:
       - ./:/app/easygestao
     networks:
       - easygestao_network
+    # network_mode: host
+    # Esta config funciona somente em ambiente full linux.
+
+  # nginx:
+  #   container_name: nginx
+  #   image: nginx:latest
+  #   build: ./easygestao_docker/nginx
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - easygestao_network
+  #   #configura proxy reverso
+  #   command: nginx -g "daemon off;"
+  #   depends_on:
+  #     - easygestao
 
   mysql:
     container_name: mysql
     image: mysql:8.0
     networks:
       - easygestao_network
+    # network_mode: host
+    # Esta config funciona somente em ambiente full linux.
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: ""
-      MYSQL_DATABASE: mysql
+      DB_CONNECTION: mysql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_DATABASE: easygestao
+      DB_USERNAME: root
+      DB_PASSWORD: 
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - easygestao_database_data:/var/lib/mysql
